@@ -53,14 +53,6 @@ jobs:
           tag="${{ steps.semver.outputs.tag }}"
         fi
         echo "tag=${tag}" >> "$GITHUB_OUTPUT"
-    - name: Package
-      run: ./scripts/package.sh --version "${{ steps.tag.outputs.tag }}"
-    - name: Create Release Notes
-      id: create-release-notes
-      uses: paketo-buildpacks/github-config/actions/release/notes@main
-      with:
-        repo: ${{ github.repository }}
-        token: ${{ secrets.PAKETO_BOT_GITHUB_TOKEN }}
     - name: Create Draft Release
       uses: paketo-buildpacks/github-config/actions/release/create@main
       with:
@@ -69,13 +61,4 @@ jobs:
         tag_name: v${{ steps.tag.outputs.tag }}
         target_commitish: ${{ github.sha }}
         name: v${{ steps.tag.outputs.tag }}
-        body: ${{ steps.create-release-notes.outputs.release_body }}
         draft: true
-        assets: |
-          [
-            {
-              "path": "build/buildpackage.cnb",
-              "name": "${{ github.event.repository.name }}-${{ steps.tag.outputs.tag }}.cnb",
-              "content_type": "application/x-tar"
-            }
-          ]
