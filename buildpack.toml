@@ -22,7 +22,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/bundler"
-    version = "0.7.26"
+    version = "0.7.22"
 
 [[order]]
 
@@ -32,4 +32,4 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/bundler"
-    version = "0.7.26"
+    version = "0.7.22"
