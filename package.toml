@@ -3,7 +3,7 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/bundler@0.7.22"
+  uri = "docker://gcr.io/paketo-buildpacks/bundler:0.7.22"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/mri@0.14.8"
