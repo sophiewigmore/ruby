@@ -6,4 +6,4 @@
   uri = "urn:cnb:registry:paketo-buildpacks/bundler@0.7.22"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/mri@0.12.8"
+  uri = "urn:cnb:registry:paketo-buildpacks/mri@0.13.1"
