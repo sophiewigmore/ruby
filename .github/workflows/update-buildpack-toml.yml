@@ -56,8 +56,6 @@ jobs:
         chmod +x "${GITHUB_WORKSPACE}/scripts/jam"
         "${GITHUB_WORKSPACE}/scripts/jam" version
         echo "${GITHUB_WORKSPACE}/scripts/jam" >> $GITHUB_PATH
-        echo $GITHUB_PATH
-        jam version
 
     - name: Patch Only?
       id: patch
