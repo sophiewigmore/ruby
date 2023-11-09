@@ -22,10 +22,18 @@ jobs:
       with:
         fetch-depth: 0  # gets full history
         fetch-tags: true
-    - name: Get Latest Release
+    - name: Get Latest Tag on Branch ${{ github.ref_name }}
       id: latest
       run: |
-        version=$(git describe --tags --abbrev=0 ${{ github.ref_name }})
+        # Get the latest tag in the version line
+        # If working off main branch, get the latest tag
+        # If working off a version line branch (ex. 1.3.x), get the latest tag in the version line (v1.3.*)
+        tag_search=""
+        if [[ ${{ github.ref_name }} != "main" ]]; then
+          # convert version line into tag search: 1.3.x -> v1.3.*
+          tag_search=$(echo ${{ github.ref_name }} | awk -F'[.]' '{printf("v%d.%d.*\n", $1, $2)}')
+        fi
+        version=$(git tag ${tag_search} --sort "version:refname" --merged | tail -n1)
         echo $version
         echo "version=${version}" >> "$GITHUB_OUTPUT"
     - name: Calculate Semver Tag
