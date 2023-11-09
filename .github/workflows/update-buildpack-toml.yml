@@ -57,7 +57,7 @@ jobs:
 
     - name: Patch Only?
       id: patch
-      runs: |
+      run: |
         patch_only="false"
         if [[ ${{ matrix.branch }} != "main" ]]; then
           patch_only="true"
