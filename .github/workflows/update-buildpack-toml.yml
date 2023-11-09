@@ -51,11 +51,10 @@ jobs:
     #TODO remove this
     - name: Set up one-off Jam binary
       run: |
-        ls -al $GITHUB_WORKSPACE
-        mkdir -p "${HOME}/bin"
-        cp ${GITHUB_WORKSPACE}/scripts/jam-linux "${HOME}/bin/jam"
-        chmod +x "${HOME}/bin/jam"
-        echo "${HOME}/bin/jam" >> $GITHUB_PATH
+        ls -al $GITHUB_WORKSPACE/scripts
+        cp ${GITHUB_WORKSPACE}/scripts/jam-linux ${GITHUB_WORKSPACE}/scripts/jam
+        chmod +x "${GITHUB_WORKSPACE}/scripts/jam"
+        echo "${GITHUB_WORKSPACE}/scripts/jam" >> $GITHUB_PATH
         jam --version
 
     - name: Patch Only?
