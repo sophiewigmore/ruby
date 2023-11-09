@@ -3,9 +3,6 @@ name: Create Version Line Branch
 on:
   workflow_dispatch: {}
 
-# avoid edge cases with version line creation / release creation
-concurrency: release
-
 jobs:
   create-version-line-branch:
     name: Create Version Line Branch Off Of Main
