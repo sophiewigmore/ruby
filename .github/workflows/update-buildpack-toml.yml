@@ -45,7 +45,9 @@ jobs:
       with:
         token: ${{ secrets.PAKETO_BOT_GITHUB_TOKEN }}
         title: "Updates buildpacks in buildpack.toml"
-        branch: automation/buildpack.toml/update
+        branch: automation/buildpack.toml/update-on-${{ matrix.branch }}
+        base: ${{ matrix.branch }}
+        ## TODO -autolabel?
 
   failure:
     name: Alert on Failure
