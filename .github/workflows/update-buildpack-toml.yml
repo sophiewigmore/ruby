@@ -51,7 +51,8 @@ jobs:
     #TODO remove this
     - name: Set up one-off Jam binary
       run: |
-        cp scripts/jam-linux "${HOME}/bin/jam"
+        ls -al $GITHUB_WORKSPACE
+        cp ${GITHUB_WORKSPACE}/scripts/jam-linux "${HOME}/bin/jam"
         chmod +x "${HOME}/bin/jam"
         jam --version
 
