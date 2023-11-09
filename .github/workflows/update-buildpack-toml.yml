@@ -52,7 +52,6 @@ jobs:
     - name: Set up one-off Jam binary
       run: |
         ls -al $GITHUB_WORKSPACE/scripts
-        cp ${GITHUB_WORKSPACE}/scripts/jam-linux ${GITHUB_WORKSPACE}/scripts/jam
         chmod +x "${GITHUB_WORKSPACE}/scripts/jam"
         "${GITHUB_WORKSPACE}/scripts/jam" version
         echo "${GITHUB_WORKSPACE}/scripts/jam" >> $GITHUB_PATH
