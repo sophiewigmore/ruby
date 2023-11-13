@@ -2,7 +2,7 @@ name: Set / Validate PR Labels
 on:
   pull_request_target:
     branches:
-    - main
+    - 1.2.x
     types:
     - synchronize
     - opened
