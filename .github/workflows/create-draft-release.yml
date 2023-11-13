@@ -12,7 +12,7 @@ on:
         description: 'Version of the release to cut (e.g. 1.2.3)'
         required: false
 
-concurrency: github_config_update
+concurrency:
   group: release-${{ github.ref_name }}
   cancel-in-progress: true
 
