@@ -40,11 +40,10 @@ jobs:
         version=$(git tag ${tag_search} --sort "version:refname" --merged | tail -n1)
         echo $version
         echo "version=${version}" >> "$GITHUB_OUTPUT"
-    #TODO - fix case where non-main branch is incorrectly thinking it's the first release on the line 
     - name: Calculate Semver Tag
       if: github.event.inputs.version == ''
       id: semver
-      uses: paketo-buildpacks/github-config/actions/tag/calculate-semver@semver-only
+      uses: paketo-buildpacks/github-config/actions/tag/calculate-semver@main
       with:
         repo: ${{ github.repository }}
         token: ${{ github.token }}
