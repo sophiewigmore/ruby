@@ -12,7 +12,7 @@ on:
         description: 'Version of the release to cut (e.g. 1.2.3)'
         required: false
   workflow_run:
-    workflows: ["Create Version Line"]
+    workflows: ["Create Version Line Branch"]
     types:
     - completed
 
