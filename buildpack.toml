@@ -18,18 +18,18 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/mri"
-    version = "0.13.1"
+    version = "0.13.2"
 
   [[order.group]]
     id = "paketo-buildpacks/bundler"
-    version = "0.7.22"
+    version = "0.7.26"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/mri"
-    version = "0.13.1"
+    version = "0.13.2"
 
   [[order.group]]
     id = "paketo-buildpacks/bundler"
-    version = "0.7.22"
+    version = "0.7.26"
