@@ -64,8 +64,7 @@ jobs:
     - name: print
       run: |
         echo ${{ github.ref_name }}
-        echo ${{ github.event.workflow_run.id }}
-        echo ${{ github.event.workflow_run.conclusion }}
+        echo ${{ github.event_name }}
         echo "-----"
 
     #TODO reset branch to main
@@ -79,7 +78,7 @@ jobs:
 
     - name: Create Draft Release
       uses: paketo-buildpacks/github-config/actions/release/create@main
-      if: ${{ github.ref_name }} != "main" || ${{ github.event.workflow_run.id }} == ""
+      if: ${{ github.event_name != 'workflow_run' || github.ref_name != 'main' }}
       with:
         repo: ${{ github.repository }}
         token: ${{ secrets.PAKETO_BOT_GITHUB_TOKEN }}
@@ -91,7 +90,7 @@ jobs:
     # Publish release on main when triggered by the Create Version Line Branch workflow
     - name: Create and Publish Release
       uses: paketo-buildpacks/github-config/actions/release/create@main
-      if: ${{ github.ref_name }}  == "main" && ${{ github.event.workflow_run.id }} != ""
+      if: ${{ github.event_name == 'workflow_run' && github.ref_name == 'main' }}
       with:
         repo: ${{ github.repository }}
         token: ${{ secrets.PAKETO_BOT_GITHUB_TOKEN }}
