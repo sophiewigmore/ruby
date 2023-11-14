@@ -72,7 +72,7 @@ jobs:
 
     - name: Create Draft Release
       uses: paketo-buildpacks/github-config/actions/release/create@main
-      if: ${{ github.ref_name != main }} || ${{ github.event.workflow_run.id == "" }}
+      if: ${{ github.ref_name != "main" }} || ${{ github.event.workflow_run.id == "" }}
       with:
         repo: ${{ github.repository }}
         token: ${{ secrets.PAKETO_BOT_GITHUB_TOKEN }}
