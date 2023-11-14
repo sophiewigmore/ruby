@@ -3,7 +3,7 @@ name: Create or Update Draft Release
 on:
   push:
     branches:
-    - main
+    - 1.6.x
   repository_dispatch:
     types: [ version-bump ]
   workflow_dispatch:
