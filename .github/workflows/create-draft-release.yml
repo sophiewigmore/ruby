@@ -61,6 +61,13 @@ jobs:
           tag="${{ steps.semver.outputs.tag }}"
         fi
         echo "tag=${tag}" >> "$GITHUB_OUTPUT"
+    - name: print
+      run: |
+        echo ${{ github.ref_name }}
+        echo ${{ github.event.workflow_run.id }}
+        echo ${{ github.event.workflow_run.conclusion }}
+        echo "-----"
+
     #TODO reset branch to main
     - name: Reset Draft Release
       id: reset
