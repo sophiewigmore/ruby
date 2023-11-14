@@ -3,7 +3,7 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/bundler@0.7.22"
+  uri = "urn:cnb:registry:paketo-buildpacks/bundler@0.7.26"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/mri@0.13.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/mri@0.13.2"
