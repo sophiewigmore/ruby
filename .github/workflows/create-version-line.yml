@@ -3,6 +3,9 @@ name: Create Version Line Branch
 on:
   workflow_dispatch: {}
 
+concurrency:
+  group: release-${{ github.ref_name }}
+
 jobs:
   create-version-line-branch:
     name: Create Version Line Branch Off Of Main
