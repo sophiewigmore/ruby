@@ -4,7 +4,7 @@ on:
   workflow_dispatch: {}
 
 concurrency:
-  group: release-${{ github.ref_name }}
+  group: create-version-line
 
 jobs:
   create-version-line-branch:
